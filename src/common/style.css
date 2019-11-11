@@ -52,7 +52,3 @@ body{
     position: relative;
     z-index:5;
 }
-#searchBtn{
-    background: none;
-    color: black;
-}
