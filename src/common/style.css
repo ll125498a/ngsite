@@ -52,3 +52,39 @@ body{
     position: relative;
     z-index:5;
 }
+.siteBox{
+    text-align:center;
+    position: relative;
+    margin-top:150px;
+}
+.siteBtn{
+    width: 104px;
+    height: 94px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    display: inline-block;
+    zoom:1;
+    overflow: hidden;
+    text-decoration: none;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+.siteSpan{
+                    font-size:13px;
+					color:white;
+					text-shadow:1px 1px 3px black;
+					display: inline-block;
+					max-width: 100px;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					margin-top:0px;
+}
+.uSiteDelete{
+    display:none;
+    width:14px;
+    height: 14px;
+    position: absolute;
+}

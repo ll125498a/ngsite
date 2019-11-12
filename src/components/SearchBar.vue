@@ -1,11 +1,8 @@
 <template>
 <div id="searchBox">
-
     <el-form id="searchCheck">
-    <!-- <el-input id="search" v-model="Search" placeholder="请输入搜索内容" >     
-    </el-input> -->
-    <el-autocomplete id="search" v-model="Contents" placeholder="请输入搜索内容" :fetch-suggestions="querySearch" @select="handleSelect" :trigger-on-focus="false">
-        <el-button slot="append" icon="el-icon-search"></el-button>
+    <el-autocomplete id="search"  :select-when-unmatched="true" v-model="Contents" placeholder="请输入搜索内容" :fetch-suggestions="querySearch" @select="handleSelect" :trigger-on-focus="false">
+        <el-button slot="append" icon="el-icon-search" @click="SearchBtn"></el-button>
     </el-autocomplete>
             </el-form>
     
@@ -22,19 +19,28 @@ export default {
     methods:{
         querySearch(querystring,callback)
         {
-            var Contents=this.Contents
-            var results="https://www.baidu.com/s?wd="+querystring
-            axios.get(results).then((response)=>{
-                for(let i of response.data)
-                {  
-                    i.value=i.data
+            var list=[];
+            var results="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+querystring
+            this.$http.jsonp(results,{jsonp:'cb'})
+            .then((response)=>{
+                for(var i in response.data.s)
+                {
+                    list.push({value:response.data.s[i]})
                 }
+                callback(list)
             })
-        },
-        handleSelect(){
+            .catch(function(error){
+                console.log(error);
+            })
             
+        },
+        handleSelect(item){
+            window.open("https://www.baidu.com/s?wd="+item.value,"_blank")
+        },
+        SearchBtn(){
+            window.open("https://www.baidu.com/s?wd="+this.Contents,"_blank")
+        }    
         }
-    }
 
     
 }

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <homepage></homepage>
+
     <searchbar></searchbar>
+        <homepage></homepage>
   </div>
 </template>
 <script>
