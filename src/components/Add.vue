@@ -2,10 +2,21 @@
     <div>
         <el-button icon="el-icon-circle-plus" @click="dialogVisible=true"></el-button>
         <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClost">
-            <span>这是一条消息</span>
+            <span>
+                <el-input placeholder="输入网址" size="small" v-model="Address">
+                    <template slot="prepend">网址：</template>
+                </el-input>
+                <br>
+                <el-input placeholder="输入名称" v-model="name">
+                    <template slot="prepend">名称：</template>
+                </el-input>
+                <el-input placeholder="" v-model="LOGO">
+                    <template slot="prepend">网址图片：</template>
+                </el-input><el-button round size="small" @click="GainLOGO()">获取LOGO</el-button>
+            </span>
             <span slot="footer" class="dialog-footer">
                 <el-button @click="dialogVisible=false">取消</el-button>
-                <el-button type="primary" @click="dialogVisible=false">确定</el-button>
+                <el-button type="primary" @click="dialogVisible=false;Addpicture()">确定</el-button>
             </span>
         </el-dialog>
     </div>
@@ -14,7 +25,10 @@
 export default {
     data(){
         return{
-            dialogVisible:false
+            dialogVisible:false,
+            Address:'',
+            name:'',
+            LOGO:''
         }
     },
     methods:{
@@ -25,8 +39,17 @@ export default {
                 done();
             })
             .catch(_=>{})
+        },
+        Addpicture()
+        {
+            var i={siteAddress:this.Address,pictureAddress:this.LOGO,name:this.name}
+            this.lsit.push(i)
+        },
+        GainLOGO(){
+            this.LOGO=this.Address+'/favicon.ico'
         }
     }
+
     
 }
 </script>
