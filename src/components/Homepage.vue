@@ -6,13 +6,13 @@
    <span class="siteSpan">{{item.name}}</span>
   </a>
 </div> -->
-<div class="siteBtn">
-  <el-row>
-    <el-button :circle="true" :plain="true">
-      <img src="http://www.jianfast.com/images/siteimg/01.png">
-    </el-button>
-    <span class="siteSpan">京东</span>
-  </el-row>
+<div class="siteBox">
+<div class="siteBtn" v-for="item in Customize" :key="item.index" >
+<a :href="item.siteAddress" target="_blank" class=" el-button el-button--default el-button--small is-plain is-circle">
+      <img :src="item.pictureAddress">
+    </a>
+    <span class="siteSpan">{{item.name}}</span>
+    </div>
 </div>
 </template>
 <script>
@@ -20,16 +20,15 @@ export default {
   data () {
     return {
       Customize:[
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
-        {siteAddress:"www.baidu.com",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"}
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
+        {siteAddress:"https://www.baidu.com/",pictureAddress:"http://www.jianfast.com/images/siteimg/01.png",name:"京东"},
       ]
     }
   },
@@ -60,5 +59,7 @@ export default {
   width: 68px;
   height: 68px;
   margin-right: 20px;
+  margin-left: 19px;
+  padding-top: 23px;
 }
 </style>

@@ -70,9 +70,11 @@ body{
     -moz-opacity: 0.8;
     -khtml-opacity: 0.8;
     opacity: 0.8;
+    text-align: center;
+    margin-top: 20px;
 }
 .siteSpan{
-                    font-size:13px;
+                    font-size:16px;
 					color:white;
 					text-shadow:1px 1px 3px black;
 					display: inline-block;
@@ -80,7 +82,7 @@ body{
 					overflow: hidden;
 					white-space: nowrap;
 					text-overflow: ellipsis;
-					margin-top:0px;
+                    margin-top:0px;
 }
 .uSiteDelete{
     display:none;
