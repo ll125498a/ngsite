@@ -1,8 +1,11 @@
 <template>
-  <div id="app">
-
-    <searchbar></searchbar>
+ <div>
+   
+        <div id="app">
+        <searchbar></searchbar>
         <homepage></homepage>
+        </div>
+    
         <add></add>
   </div>
 </template>

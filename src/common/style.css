@@ -50,7 +50,6 @@ body{
     -khtml-opacity: 0.8;
     opacity: 0.8;
     position: relative;
-    z-index:5;
 }
 .siteBox{
     text-align:center;
@@ -59,7 +58,7 @@ body{
 }
 .siteBtn{
     width: 104px;
-    height: 94px;
+    height: 114px;
     padding-top: 7px;
     box-sizing: border-box;
     display: inline-block;
@@ -85,8 +84,17 @@ body{
                     margin-top:0px;
 }
 .uSiteDelete{
-    display:none;
-    width:14px;
-    height: 14px;
+    /* display: none; */
     position: absolute;
+    margin-left: 30px;
+    font-size: 15px;
+    width: 20px;
+    height: 20px;
+    padding-top: 2px;
+    padding-left: 2px;
+}#fixedBtnBox
+{
+    position: absolute;
+    top:900px;
+    right: 20px;
 }
