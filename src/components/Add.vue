@@ -53,6 +53,9 @@ export default {
             {
             var i={siteAddress:this.Address,pictureAddress:this.LOGO,name:this.name,show:true,dispd:false}
             this.$store.commit('Addpicture',i)
+            this.Address=''
+            this.name=''
+            this.LOGO=''
             }
             else
             {
