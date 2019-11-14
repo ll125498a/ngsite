@@ -48,8 +48,16 @@ export default {
         },
         Addpicture()
         {
+            var reh=/(http|https):\/\/(www.)?(\w+(\.)?)+/
+            if(reh.test(this.Address))
+            {
             var i={siteAddress:this.Address,pictureAddress:this.LOGO,name:this.name,show:true,dispd:false}
             this.$store.commit('Addpicture',i)
+            }
+            else
+            {
+                alert("请输入URL")
+            }
         },
         disp(){
             this.$store.commit('disp')
@@ -59,17 +67,17 @@ export default {
             var reh=/(http|https):\/\/(www.)?(\w+(\.)?)+/
             if(this.Address!='')
             {
-            if(reg.test(this.Address))
-            {
-                let address=this.Address.match(reh)
-                this.LOGO=address[0]+'/favicon.ico'
-            }
-            else
-            {
-                this.Address='http://'+this.Address;
-                let address=this.Address.match(reh)
-                this.LOGO=address[0]+'/favicon.ico'
-            }
+                    if(reg.test(this.Address))
+                    {
+                        let address=this.Address.match(reh)
+                        this.LOGO=address[0]+'/favicon.ico'
+                    }
+                    else
+                    {
+                        this.Address='http://'+this.Address;
+                        let address=this.Address.match(reh)
+                        this.LOGO=address[0]+'/favicon.ico'
+                    }
             }
             else
             {
@@ -77,6 +85,9 @@ export default {
             }
             }
             
+        },
+        mounted(){
+            this.$store.commit('Gainpicture')
         }
 }
 

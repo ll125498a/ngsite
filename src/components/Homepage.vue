@@ -12,10 +12,10 @@
   
   <!-- <img class="uSiteDelete" src="../assets/siteSetDelete.png"> -->
   <el-button icon="el-icon-close" class="uSiteDelete" @click="item.dispd=!item.dispd" circle v-show="$store.state.cound"></el-button>
-   <el-dialog title="提示" :visible.sync="item.dispd" width="30%" :modal-append-to-body='false' :before-close="handleClost">
+   <el-dialog title="提示" :visible.sync="item.dispd" width="30%" :append-to-body='true' :before-close="handleClost" center>
     <span>是否确认删除？</span>
-    <span>
-      <el-button @click="item.dispd=false;item.show=!item.show" >是</el-button>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="item.dispd=false;item.show=false;Deletep();">是</el-button>
       <el-button type="primary" @click="item.dispd=false">否</el-button>
     </span>
   </el-dialog>
@@ -45,6 +45,10 @@ export default {
             })
             .catch(_=>{})
         },
+        Deletep(){
+          this.$store.commit('Deletepicture')
+          
+        }
   }
 
 }

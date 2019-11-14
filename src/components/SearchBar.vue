@@ -1,7 +1,7 @@
 <template>
 <div id="searchBox">
     <el-form id="searchCheck">
-    <el-autocomplete id="search"  :select-when-unmatched="true" v-model="Contents" placeholder="请输入搜索内容" :fetch-suggestions="querySearch" @select="handleSelect" :trigger-on-focus="false">
+    <el-autocomplete id="search"  :select-when-unmatched="true" v-model="Contents" placeholder="请输入搜索内容" :fetch-suggestions="querySearch" @select="handleSelect" :trigger-on-focus="false" >
         <el-button slot="append" icon="el-icon-search" @click="SearchBtn"></el-button>
     </el-autocomplete>
             </el-form>
@@ -13,7 +13,7 @@
 export default {
     data(){
         return{
-            Contents:''
+            Contents:'',
         }
     },
     methods:{
@@ -39,7 +39,7 @@ export default {
         },
         SearchBtn(){
             window.open("https://www.baidu.com/s?wd="+this.Contents,"_blank")
-        }    
+        }   
         }
 
     
