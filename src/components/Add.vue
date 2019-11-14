@@ -56,7 +56,11 @@ export default {
             }
             else
             {
-                alert("请输入URL")
+                this.$message({
+                    showClose:true,
+                    message:'请输入URL',
+                    center:true
+                })
             }
         },
         disp(){

@@ -38,6 +38,7 @@ export default {
             window.open("https://www.baidu.com/s?wd="+item.value,"_blank")
         },
         SearchBtn(){
+            if(this.Contents!='')
             window.open("https://www.baidu.com/s?wd="+this.Contents,"_blank")
         }   
         }
