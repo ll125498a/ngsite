@@ -1,16 +1,6 @@
 <template>
-<!-- <div class="siteBox">
-  <a class="siteBtn" :href="item.siteAddress" target="_blank" v-for="item in Customize" :key="item.index">
-   <el-avatar :size="68" :src="item.pictureAddress"></el-avatar>
-   <img class="uSiteDelete" src="../assets/siteSetDelete.png">
-   <span class="siteSpan">{{item.name}}</span>
-  </a>
-</div> -->
 <div class="siteBox">
-    
 <div class="siteBtn" v-for="item in $store.state.list" :key="item.index" v-show="item.show">
-  
-  <!-- <img class="uSiteDelete" src="../assets/siteSetDelete.png"> -->
   <el-button icon="el-icon-close" class="uSiteDelete" @click="item.dispd=!item.dispd" circle v-show="$store.state.cound"></el-button>
    <el-dialog title="提示" :visible.sync="item.dispd" width="30%" :append-to-body='true' :before-close="handleClost" center>
     <span>是否确认删除？</span>
