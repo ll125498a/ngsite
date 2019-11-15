@@ -23,5 +23,5 @@ import add from './components/Add';
 </script>
 
 <style>
-@import '.\common\style.css';
+@import './common/style.css';
 </style>
