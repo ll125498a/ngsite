@@ -13,7 +13,7 @@
         <el-button
           slot="append"
           icon="el-icon-search"
-          @click="SearchBtn"
+          @click="searchBtn()"
         ></el-button>
       </el-autocomplete>
     </el-form>
