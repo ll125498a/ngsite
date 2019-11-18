@@ -4,11 +4,11 @@ import homepage from '@/components/Homepage'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'homepage',
-      component: homepage
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'homepage',
+            component: homepage
+        }
+    ]
 })
